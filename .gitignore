@@ -1,0 +1,9 @@
+# Compiled source
+/.next
+/.vscode
+
+# Dependencies
+/node_modules
+
+# Environment variables
+.env
