@@ -31,7 +31,7 @@ function ProductCard({ props, addToCartHandler }) {
             objectFit="cover"
           />
           {discount > 0 && (
-            <div className="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 rounded-bl items-center flex">
+            <div className="absolute top-0 right-0 bg-blue-800 text-white px-2 py-1 rounded-bl items-center flex">
               <TbDiscount2 size={20} />
               <span className="ml-1">Em promoção</span>
             </div>
