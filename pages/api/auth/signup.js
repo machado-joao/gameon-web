@@ -24,7 +24,8 @@ async function handler(req, res) {
 
   await db.connect();
 
-  const existingUser = await User.findOne({ email: email });
+  let newEmail = email.toLowerCase();
+  const existingUser = await User.findOne({ email: newEmail });
   if (existingUser) {
     res.status(422).json({ message: "E-mail já cadastrado!" });
     await db.disconnect();
@@ -33,7 +34,7 @@ async function handler(req, res) {
 
   const newUser = new User({
     name,
-    email,
+    email: newEmail,
     password: bcryptjs.hashSync(password),
     image,
     isAdmin: false,
