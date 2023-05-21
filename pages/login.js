@@ -120,19 +120,6 @@ function LoginScreen() {
                     Entrar
                   </button>
                 </div>
-                <div className="mb-2 mt-2">
-                  <hr />
-                  <div className="cursor-pointer flex flex-col justify-center overflow-hidden">
-                    <div className="bg-white m-auto p-6 rounded-md w-full">
-                      <div className="border border-gray-300 flex items-center justify-center p-4 rounded-lg shadow-md">
-                        <FcGoogle size={24} />
-                        <span className="font-semibold ml-2 text-gray-500 text-center">
-                          Entrar com o Google
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </form>
             </div>
           </div>
