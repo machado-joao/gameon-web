@@ -44,24 +44,32 @@ function ProductCard({ props, addToCartHandler }) {
         </div>
         <div className="h-full w-full flex justify-center items-center">
           <div className="flex flex-col justify-center items-center text-center">
-            <div className="text-2xl font-bold">
+            <div className="text-xl font-bold mb-7">
               {discount > 0 ? (
-                <span className="text-gray-600 mb-5 relative">{`Preço: R$ ${(
-                  price -
-                  price * (discount / 100)
-                ).toFixed(2)}`}</span>
+                <>
+                  <span className="block text-red-600 line-through">{`De: R$ ${price.toFixed(
+                    2
+                  )}`}</span>
+                  <span className="text-gray-600">{`Por: R$ ${(
+                    price -
+                    price * (discount / 100)
+                  ).toFixed(2)}`}</span>
+                </>
               ) : (
-                <span className="text-gray-600 relative">{`Preço: R$ ${price.toFixed(
-                  2
-                )}`}</span>
+                <>
+                  <span> </span>
+                  <span className="text-gray-600">{`Preço: R$ ${price.toFixed(
+                    2
+                  )}`}</span>
+                </>
               )}
             </div>
           </div>
         </div>
       </div>
-      <div className="px-6 py-2">
+      <div className="px-6 py-2 flex justify-center items-center">
         <button
-          className="bg-blue-800 hover:bg-blue-700 text-white font-bold px-4 rounded inline-flex items-center bottom-0"
+          className="bg-blue-800 hover:bg-blue-700 text-white font-bold px-4 rounded inline-flex items-center bottom-0 absolute"
           onClick={handleAddToCard}
         >
           <AiOutlineShoppingCart size={24} />
