@@ -9,8 +9,6 @@ import { toast } from "react-toastify";
 
 import Layout from "../components/Layout";
 
-import { FcGoogle } from "react-icons/fc";
-
 function LoginScreen() {
   const { data: session } = useSession();
   const router = useRouter();
