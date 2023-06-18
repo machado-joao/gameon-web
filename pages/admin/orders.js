@@ -104,10 +104,15 @@ function AdminOrderScreen() {
                       </td>
                       <td className="p-5">
                         {order.isDelivered ? (
-                          <span className="bg-green-300 p-2 rounded-xl">
-                            {order.deliveredAt.substring(8, 10)}/
-                            {order.deliveredAt.substring(5, 7)}/
-                            {order.deliveredAt.substring(0, 4)}
+                          <span className="flex flex-col items-center w-full">
+                            <span className="flex flex-col p-2 w-fit bg-green-300 rounded-xl">
+                              <span>{order.deliveredAt.substring(11, 19)}</span>
+                              <span>
+                                {order.deliveredAt.substring(8, 10)}/
+                                {order.deliveredAt.substring(5, 7)}/
+                                {order.deliveredAt.substring(0, 4)}
+                              </span>
+                            </span>
                           </span>
                         ) : (
                           <span className="bg-red-300 text-md text-black p-2 rounded-xl">

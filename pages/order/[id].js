@@ -201,16 +201,8 @@ function OrderScreen() {
                         key={item._id}
                         className="border-y divide-black border-black"
                       >
-                        <td>
-                          <Link href={`/product/${item.slug}`}>
-                            <Image
-                              alt={item.name}
-                              className="cursor-pointer"
-                              src={item.image}
-                              width={50}
-                              height={50}
-                            />
-                          </Link>
+                        <td className="p-5 text-xl only:text-center">
+                          {item.name}
                         </td>
                         <td className="p-5 text-xl only:text-center">
                           {item.quantity}
@@ -271,7 +263,10 @@ function OrderScreen() {
                   <div className="flex items-center flex-col">
                     {isDelivered ? (
                       <div className="alert-success">
-                        Entregue {deliveredAt}
+                        Entregue {deliveredAt.substring(11, 19)} do dia{" "}
+                        {deliveredAt.substring(8, 10)}/
+                        {deliveredAt.substring(5, 7)}/
+                        {deliveredAt.substring(0, 4)}.
                       </div>
                     ) : (
                       <div className="alert-error">Não entregue</div>

@@ -137,12 +137,14 @@ function ProductScreen(props) {
               <AiOutlineShoppingCart size={24} />
               <span className="ml-2">Adicionar ao carrinho</span>
             </button>
+            <div className="absolute mt-10">
+              <h2 className="title">Descrição</h2>
+              <p className="text-gray-600 text-lg mb-6">
+                {product.description}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="mt-32">
-        <h2 className="title">Descrição</h2>
-        <p className="text-gray-600 text-lg mb-6">{product.description}</p>
       </div>
     </Layout>
   );
