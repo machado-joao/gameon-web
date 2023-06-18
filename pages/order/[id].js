@@ -2,8 +2,6 @@ import { useSession } from "next-auth/react";
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import React, { useEffect, useReducer } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import Link from "next/link";
 import { getError } from "../../utils/error";
 import { toast } from "react-toastify";
 import axios from "axios";
