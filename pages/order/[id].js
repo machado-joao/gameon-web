@@ -188,9 +188,9 @@ function OrderScreen() {
                 <table className="min-w-full">
                   <thead className="border-b">
                     <tr className="text-black text-xl">
-                      <th className="px-5 text-center">Produto</th>
+                      <th className="px-5 text-center">Nome do produto</th>
                       <th className="p-5 text-center">Quantidade</th>
-                      <th className="p-5 text-center">Preço total</th>
+                      <th className="p-5 text-center">Preço unitário</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -206,7 +206,13 @@ function OrderScreen() {
                           {item.quantity}
                         </td>
                         <td className="p-5 text-xl text-center">
-                          R$&nbsp;{itemsPrice.toFixed(2)}
+                          R$&nbsp;
+                          {item.discount > 0
+                            ? (
+                                item.price -
+                                item.price * (item.discount / 100)
+                              ).toFixed(2)
+                            : item.price.toFixed(2)}
                         </td>
                       </tr>
                     ))}
@@ -277,7 +283,8 @@ function OrderScreen() {
                       Pagamento
                     </h2>
                     <div className="mb-2 text-xl text-center">
-                      {paymentMethod === "Paypal" ? (
+                      {paymentMethod === "PayPal" ||
+                      paymentMethod === "Paypal" ? (
                         <div className="flex justify-center items-center">
                           {paymentMethod}
                           <BsPaypal size={24} />

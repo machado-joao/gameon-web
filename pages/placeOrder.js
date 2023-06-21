@@ -57,6 +57,14 @@ function PlaceOrderScreen() {
         totalPrice,
         discount,
       });
+      const field = "countInStock";
+      for (let i = 0; i < cartItems.length; i++) {
+        let newCountInStock = cartItems[i].countInStock - cartItems[i].quantity;
+        await axios.put(`/api/products/${cartItems[i]._id}`, {
+          field,
+          newCountInStock,
+        });
+      }
       setLoading(false);
       dispatch({ type: "CART_CLEAR_ITEMS" });
       Cookies.set(
@@ -131,6 +139,11 @@ function PlaceOrderScreen() {
                               width={50}
                               height={50}
                             />
+                          </Link>
+                          <Link href={`/product/${item.slug}`}>
+                            <p className="cursor-pointer !py-1 !px-0 hover:text-blue-600 hover:underline hover:underline-offset-1">
+                              {item.name}
+                            </p>
                           </Link>
                         </td>
                         <td className="p-5 text-xl only:text-center">

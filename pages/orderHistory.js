@@ -99,15 +99,13 @@ function OrderHistoryScreen() {
                       </div>
                     )}
                   </td>
-                  {!order.isPaid && (
-                    <td className="p-5 text-center">
-                      <Link href={`/order/${order._id}`} passHref>
-                        <span className="cursor-pointer">
-                          <RxMagnifyingGlass size={24} />
-                        </span>
-                      </Link>
-                    </td>
-                  )}
+                  <td className="p-5 text-center">
+                    <Link href={`/order/${order._id}`} passHref>
+                      <span className="cursor-pointer">
+                        <RxMagnifyingGlass size={24} />
+                      </span>
+                    </Link>
+                  </td>
                 </tr>
               ))}
             </tbody>

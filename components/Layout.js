@@ -171,16 +171,6 @@ function Layout({ title, children }) {
                           </DropdownLink>
                         </Menu.Item>
                       )}
-                      {session?.user?.isAdmin && (
-                        <Menu.Item>
-                          <DropdownLink
-                            className="dropdown-link m-2 rounded-md"
-                            href="/admin/dashboard"
-                          >
-                            Dashboard
-                          </DropdownLink>
-                        </Menu.Item>
-                      )}
                       <Menu.Item>
                         <a
                           className="dropdown-link m-2 rounded-md"

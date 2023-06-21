@@ -11,7 +11,7 @@ import { BsPaypal, BsStripe } from "react-icons/bs";
 import { MdPix } from "react-icons/md";
 import { BiBarcodeReader } from "react-icons/bi";
 
-const methods = ["Paypal", "PIX", "Boleto", "Stripe"];
+const methods = ["PayPal", "PIX", "Boleto", "Stripe"];
 
 function PaymentScreen() {
   const { state, dispatch } = useContext(Store);
@@ -66,7 +66,7 @@ function PaymentScreen() {
                     checked={selectedPaymentMethod === payment}
                     onChange={() => setSelectedPaymentMethod(payment)}
                   />
-                  {payment === "Paypal" ? (
+                  {payment === "PayPal" ? (
                     <div className="flex gap-x-10 justify-between items-center">
                       {payment}
                       <BsPaypal size={24} />

@@ -3,22 +3,12 @@ import Link from "next/link";
 
 import ReactTooltip from "react-tooltip";
 
-import { FiBarChart2, FiBox, FiPackage, FiUsers } from "react-icons/fi";
+import { FiBox, FiPackage, FiUsers } from "react-icons/fi";
 
 function DashboardLinks() {
   return (
     <div className="card text-xl py-5 px-3">
       <ul className="flex flex-col mt-3 text-center align-middle items-center">
-        <Link href="/admin/dashboard">
-          <li
-            className="card px-2 py-2 cursor-pointer !rounded-sm hover:scale-125 text-blue-800"
-            data-tip="Dashboard"
-          >
-            <span>
-              <FiBarChart2 />
-            </span>
-          </li>
-        </Link>
         <Link href="/admin/orders">
           <li
             className="card px-2 py-2 cursor-pointer !rounded-sm hover:scale-125 text-blue-800"
