@@ -228,7 +228,7 @@ function PlaceOrderScreen() {
                         Pagamento
                       </h2>
                       <div className="mb-2 text-xl text-center">
-                        {paymentMethod === "Paypal" ? (
+                        {paymentMethod === "PayPal" ? (
                           <div className="flex justify-center items-center">
                             {paymentMethod}
                             <BsPaypal size={24} />
